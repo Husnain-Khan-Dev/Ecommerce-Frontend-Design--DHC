@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List View</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+  <div id="header" class="container">
+    <button id="hamburger" class="ham" aria-label="Open menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/Layout/Brand/logo-colored.png" alt="logo">
+      </a>
+    </div>
+
+    <form class="search_bar" role="search">
+      <input class="search" type="search" placeholder="Search">
+      <select class="category">
+        <option>All Category</option>
+        <option>Clothing</option>
+        <option>Tech Devices</option>
+      </select>
+      <button class="search_btn" type="submit">Search</button>
+    </form>
+
+    <div class="head-icons">
+      <a href="#" class="icon"><i class="fa-solid fa-user"></i><span>Profile</span></a>
+      <a href="#" class="icon none"><i class="fa-solid fa-envelope"></i><span>Message</span></a>
+      <a href="#" class="icon none"><i class="fa-solid fa-box"></i><span>Orders</span></a>
+      <a href="cart.html" class="icon"><i class="fa-solid fa-cart-shopping"></i><span>My Cart</span></a>
+    </div>
+  </div>
+
+  <nav id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <button id="drawer-close" class="drawer-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <ul>
+      <li><a href="list_view.html">All category</a></li>
+      <li><a href="#">Hot offers</a></li>
+      <li><a href="#">Gift boxes</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </nav>
+</header>
+    
+    <nav>
+        <div class="main-nav">
+            <div class="nav-left">
+    <!-- Hamburger Icon -->
+             <button class="hamburger">
+               <a href="#"><i class="fas fa-bars"></i><span>All category</span></a>
+               
+             </button>
+
+    <!-- Navigation Links -->
+            <ul class="nav-links">
+              <li><a href="#">Hot offers</a></li>
+              <li><a href="#">Gift boxes</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Menu item</a></li>
+              <select name="" id=""><option value=""><a href="#">Help</a></option> <option value=""><a href="#">Helps Center</a></option> <option value=""><a href="#">Contact US</a></option> <option value=""><a href="#">How to Buy </a></option><option value=""><a href="#">Track Your Order</a></option></select>
+             </ul>
+           </div>
+
+          <div class="nav-right">
+    <!-- Language & Currency -->
+            <div class="settings">
+              <select>
+                <option>English, USD</option>
+                <option>Urdu, Pak</option>
+              </select>
+            </div>
+
+     <!-- Shipping -->
+            <div class="dropdown">
+  <button class="dropdown-btn" onclick="toggleDropdown()"> Ship To
+    <img src="assets/Layout1/Image/flags/Pkjpg.jpg" alt="Pakistan" class="flag-icon"> 
+    <span class="arrow">&#9662;</span>
+  </button>
+  <div class="dropdown-content" id="dropdown">
+    <a href="#">  Ship to<img src="assets/Layout1/Image/flags/DE@2x.png" alt="Germany" class="flag-icon"></a>
+    <a href="#">  Ship to<img src="assets/Layout1/Image/flags/Pkjpg.jpg" alt="Pakistan" class="flag-icon"></a>
+    <a href="#">  Ship to<img src="assets/Layout1/Image/flags/AE@2x.png" alt="Palestine" class="flag-icon"></a>
+    <a href="#">  Ship to<img src="assets/Layout1/Image/flags/DK@2x.png" alt="Turkey" class="flag-icon"></a>
+  </div>
+</div>
+    </div>
+    </nav>
+    
+<!-- main part -->
+    <div class="container">
+        <aside class="sidebar">
+            <div class="filter-group">
+                <h3>Category</h3>
+                <ul>
+                    <li>Mobile accessory</li>
+                    <li>Electronics</li>
+                    <li>Smartphones</li>
+                    <li>Modern tech</li>
+                    <li class="see-all">See all</li>
+                </ul>
+            </div>
+            <div class="filter-group">
+                <h3>Brands</h3>
+                <label><input type="checkbox" checked> Samsung</label>
+                <label><input type="checkbox" checked> Apple</label>
+                <label><input type="checkbox" checked> Huawei</label>
+                <label><input type="checkbox" checked> Pocco</label>
+                <label><input type="checkbox"> Lenovo</label>
+                <p class="see-all">See all</p>
+            </div>
+            <div class="filter-group">
+                <h3>Price range</h3>
+                <div class="price-inputs">
+                    <input type="number" placeholder="0">
+                    <input type="number" placeholder="999999">
+                </div>
+                <button class="apply-btn">Apply</button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="top-bar">
+                <span>12,911 items in <b>Mobile accessory</b></span>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <label style="font-size: 13px;"><input type="checkbox" checked> Verified only</label>
+                    <select style="padding: 5px; border-radius: 4px; border: 1px solid #ddd;"><option>Featured</option></select>
+                    <div class="view-switchers">
+                        <button id="grid-view-btn" class="active">田</button>
+                        <button id="list-view-btn">☰</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tags">
+                <span>Samsung ✕</span>
+                <span>Apple ✕</span>
+                <span>Pocco ✕</span>
+                <span>Metallic ✕</span>
+                <span>4 star ✕</span>
+                <span class="clear-all">Clear all filter</span>
+            </div>
+
+            <div id="product-container" class="grid-view"></div>
+
+            <div class="pagination-bar">
+                <div class="limit-selector">
+                    Show <select id="itemsPerPage" style="padding: 5px; border-radius: 4px;">
+                        <option value="6">6</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="pagination-buttons">
+                    <button> &lt; </button>
+                    <div id="pageNumbers" style="display: flex;"></div>
+                    <button> &gt; </button>
+                </div>
+            </div>
+        </main>
+    </div>
+ 
+
+    <div class="newsletter">
+    <h3>Subscribe on our newsletter</h3>
+    <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+    <input type="email" placeholder="Email"><button>Subscribe</button>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<div class=" footer-grid">
+
+    <div>
+        <div class="brand"><img src="assets/Layout/Brand/logo-colored.png" alt=""></div>
+        <p>Best information about the company <br> goes here but now lorem ipsum is</p>
+        <div class="social">
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-pinterest-p"></i></a>
+           
+            
+        </div>
+    </div>
+
+    <div class="About ">
+        <h6>About</h6>
+        <ul><li>About Us</li><li>Find store</li><li>Categories</li><li>Blogs</li></ul>
+    </div>
+
+    <div>
+        <h6>Partnership</h6>
+        <ul><li>About Us</li><li>Find store</li><li>Categories</li><li>Blogs</li></ul>
+    </div>
+
+    <div>
+        <h6>Information</h6>
+        <ul><li>Help Center</li><li>Money Refund</li><li>Shipping</li><li>Contact us</li></ul>
+    </div>
+
+    <div>
+        <h6>For User</h6>
+        <ul><li>Help Center</li><li>Money Refund</li><li>Shipping</li><li>Contact us</li></ul>
+    </div>
+
+    <div class="apps">
+        <h6>Get app</h6>
+        <img src="assets/Layout/Misc/Group.png">
+        <img src="assets/Layout/Misc/market-button.png">
+    </div>
+
+</div>
+</div>
+
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+<div class="container bottom-inner">
+    <span>© 2023 Ecommerce.</span>
+    <span>English ▲</span>
+</div>
+</div>
+ <script >
+     // JavaScript Section
+        const allProducts = [
+            { id: "1", title: "Motorola Moto G Power 5G | 2024 | Unlocked", price: "$350.50", oldPrice: "$1128.00", rating: "7.5", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", img: "assets/Image/tech/motrola1.jpg" },
+            { id: "2", title: "Motorola Moto G Power 5G | 2024 | Unlocked", price: "$99.50", oldPrice: "", rating: "5.9", desc: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", img: "assets/Image/tech/motrola2.jpg" },
+            { id: "3", title: "Motorola Moto G Stylus 5G | 2024 | Unlocked", price: "$99.50", oldPrice: "$1128.00", rating: "7.5", desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", img: "assets/Image/tech/motrola3.jpg" },
+            { id: "4", title: "Samsung Galaxy S25 Ultra 5G", price: "$99.50", oldPrice: "$1128.00", rating: "7.5", desc: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", img: "assets/Image/tech/samsung.jpg" },
+            { id: "5", title: "Galaxy S25 Ultra SM-S938B/DS 512GB 12GB RAM AI Smartphone, Factory Unlocked,", price: "$99.50", oldPrice: "", rating: "7.5", desc: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.", img: "assets/Image/tech/samsung1.jpg" },
+            { id: "6", title: "Galaxy S25 Ultra SM-S938B/DS 512GB 12GB RAM AI Smartphone, Factory Unlocked", price: "$99.50", oldPrice: "$1128.00", rating: "7.5", desc: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.", img: "assets/Image/tech/samsung2.jpg" },
+            { id: "7" , title:"Apple iPhone 15 2024 | Unlocked" , price:"$999.00" , oldPrice:"", rating:"9.5" , desc:"The thinnest, lightest notebook, completely transformed by the Apple M1 chip.", img:"assets/Image/tech/apple.jpg"},
+            { id: "8" , title:"Apple iPhone 15 2024 | Unlocked" , price:"$999.00" , oldPrice:"", rating:"9.5" , desc:"The thinnest, lightest notebook, completely transformed by the Apple M1 chip.", img:"assets/Image/tech/apple.jpg"},
+            { id: "9", title: "Apple iPhone 15 2024 | Unlocked", price: "$999.00", oldPrice: "", rating: "9.5", desc: "The thinnest, lightest notebook, completely transformed by the Apple M1 chip.", img: "assets/Image/tech/apple.jpg" },
+            { id: "10", title: "Motorola Moto G Power 5G | 2024 | Unlocked", price: "$99.50", oldPrice: "$1128.00", rating: "7.5", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", img: "assets/Image/tech/motrola1.jpg" },
+            { id: "11", title: "Motorola Moto G Power 5G | 2024 | Unlocked", price: "$99.50", oldPrice: "", rating: "5.9", desc: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", img: "assets/Image/tech/motrola2.jpg" },
+            { id: "12" , title:"Motorola Moto G Stylus 5G | 2024 | Unlocked" , price:"$99.50" , oldPrice:"$1128.00" , rating:"7.5" , desc:"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", img:"assets/Image/tech/motrola3.jpg"},
+            { id: "13" , title:"Samsung Galaxy S25 Ultra 5G" , price:"$99.50" , oldPrice:"$1128.00" , rating:"7.5" , desc:"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", img:"assets/Image/tech/samsung.jpg"},
+            { id: "14" , title:"Galaxy S25 Ultra SM-S938B/DS 512GB 12GB RAM AI Smartphone, Factory Unlocked," , price:"$99.50" , oldPrice:"", rating:"7.5" , desc:"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.", img:"assets/Image/tech/samsung1.jpg"},
+            { id: "15" , title:"Galaxy S24 Edge SM-S916B/DS 512GB 12GB RAM AI Smartphone, Factory Unlocked" , price:"$99.50" , oldPrice:"$1128.00" , rating:"7.5" , desc:"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.", img:"assets/Image/tech/samsung2.jpg"},
+            { id: "16" , title:"MacBook Air M1 - Silver 256GB" , price:"$999.00" , oldPrice:"", rating:"9.5" , desc:"The thinnest, lightest notebook, completely transformed by the Apple M1 chip.", img:"assets/Image/tech/apple.jpg"},
+            { id: "17" , title:"MacBook Air M1 - Silver 256GB" , price:"$999.00" , oldPrice:"", rating:"9.5" , desc:"The thinnest, lightest notebook, completely transformed by the Apple M1 chip.", img:"assets/Image/tech/apple.jpg"},
+            { id: "18" , title:"MacBook Air M1 - Silver 256GB" , price:"$999.00" , oldPrice:"", rating:"9.5" , desc:"The thinnest, lightest notebook, completely transformed by the Apple M1 chip.", img:"assets/Image/tech/apple.jpg"},
+        ];
+
+        let currentPage = 1;
+        let itemsPerPage = 6;
+        let currentView = 'grid';
+
+        const container = document.getElementById('product-container');
+        const gridBtn = document.getElementById('grid-view-btn');
+        const listBtn = document.getElementById('list-view-btn');
+        const pageNumbers = document.getElementById('pageNumbers');
+        const limitSelector = document.getElementById('itemsPerPage');
+
+        function render() {
+            container.className = currentView + "-view";
+            
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedItems = allProducts.slice(start, end);
+
+            container.innerHTML = paginatedItems.map(p => `
+            //     <div class="product-card">
+            //         <button class="wishlist">♡</button>
+            //         <img src="${p.img}" class="product-img">
+            //         <div class="details">
+            //             <span class="price">${p.price} ${p.oldPrice ? `<span class="old-price">${p.oldPrice}</span>` : ''}</span>
+            //             <div class="rating">⭐⭐⭐⭐ ${p.rating}</div>
+            //             <h4 class="title">${p.title}</h4>
+            //             ${currentView === 'list' ? `
+            //                 <p class="description" style="font-size:13px; color:#666; margin-bottom:10px;">${p.desc}</p>
+            //                 <a href="#" style="color:#0d6efd; text-decoration:none; font-size:13px; font-weight:bold;">View details</a>
+            //             ` : ''}
+            //         </div>
+            //     </div>
+            // `).join('');
+            container.innerHTML = paginatedItems.map(p => `
+                   <div class="product-card">
+                       <button class="wishlist">♡</button>
+                       <a href="product.html?id=${p.id}">
+                           <img src="${p.img}" class="product-img">
+                       </a>
+                       <div class="details">
+                           <span class="price">${p.price} ${p.oldPrice ? `<span class="old-price">${p.oldPrice}</span>` : ''}</span>
+                           <div class="rating">⭐⭐⭐⭐ ${p.rating}</div>
+                           
+                           <h4 class="title">
+                               <a href="product.html?id=${p.id}" style="text-decoration:none; color:inherit;">
+                                   ${p.title}
+                               </a>
+                           </h4>
+               
+                           ${currentView === 'list' ? `
+                               <p class="description" style="font-size:13px; color:#666; margin-bottom:10px;">${p.desc}</p>
+                               <a href="product.html?id=${p.id}" style="color:#0d6efd; text-decoration:none; font-size:13px; font-weight:bold;">View details</a>
+                           ` : ''}
+                       </div>
+                   </div>
+               `).join('');
+
+            updatePagination();
+        }
+
+        function updatePagination() {
+            const totalPages = Math.ceil(allProducts.length / itemsPerPage);
+            pageNumbers.innerHTML = "";
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i;
+                if (i === currentPage) btn.classList.add('active');
+                btn.onclick = () => { currentPage = i; render(); };
+                pageNumbers.appendChild(btn);
+            }
+        }
+
+        gridBtn.onclick = () => { currentView = 'grid'; gridBtn.classList.add('active'); listBtn.classList.remove('active'); render(); };
+        listBtn.onclick = () => { currentView = 'list'; listBtn.classList.add('active'); gridBtn.classList.remove('active'); render(); };
+        limitSelector.onchange = (e) => { itemsPerPage = parseInt(e.target.value); currentPage = 1; render(); };
+
+        render();
+
+        const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('mobile-drawer');
+  const drawerClose = document.getElementById('drawer-close');
+
+  // create overlay if not present
+  let overlay = document.getElementById('drawer-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'drawer-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    overlay.hidden = false;
+    overlay.classList.add('show');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    overlay.classList.remove('show');
+    setTimeout(() => overlay.hidden = true, 200);
+  }
+
+  hamburger.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  // Esc key close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+ </script>
+</body>
+</html>
